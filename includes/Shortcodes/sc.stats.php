@@ -13,7 +13,7 @@ class FF_SC_Stats {
     }
 
     private static function printGlobalGraph() {
-        echo '<img src="/ffapi/data/nodes/globalGraph.png" alt="Anzahl der Nodes und Clients der letzten 7 Tage" />';
+        echo '<img src="/ffapi/data/nodes/globalGraph.png?' . time() . '" alt="Anzahl der Nodes und Clients der letzten 7 Tage" />';
     }
 
     private static function printNodeList() {
