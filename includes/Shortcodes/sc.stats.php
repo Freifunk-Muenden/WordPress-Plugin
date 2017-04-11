@@ -41,7 +41,7 @@ class FF_SC_Stats {
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
                 },
-                "order": [[ 1, "desc" ]]
+                "order": [[ 2, "desc" ],[ 1, "desc" ]]
             });
         </script>';
     }
