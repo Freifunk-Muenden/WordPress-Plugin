@@ -21,6 +21,7 @@ class FF_SC_Stats {
         echo '<table class="table" id="nodelist">';
         echo '<thead>';
         echo '<tr>';
+        echo '<th>NodeID</th>';
         echo '<th>Hostname</th>';
         echo '<th>Clients</th>';
         echo '<th></th>';
@@ -29,6 +30,7 @@ class FF_SC_Stats {
         echo '<tbody>';
         foreach ($nodes as $node) {
             echo '<tr>';
+            echo '<td>' . $node->getID() . '</td>';
             echo '<td><b>' . $node->getHostname() . '</b></td>';
             echo '<td data-order="' . $node->getClientCount() . '">' . $node->getClientCount() . ' Clients</td>';
             echo '<td data-order="' . $node->isOnline() . '">' . ($node->isOnline() ? '<label class="label label-success">Online!</label>' : '<label class="label label-danger">Offline!</label>') . '</td>';
@@ -41,7 +43,14 @@ class FF_SC_Stats {
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
                 },
-                "order": [[ 2, "desc" ],[ 1, "desc" ]]
+                "order": [[ 3, "desc" ],[ 2, "desc" ]],
+                "columnDefs": [
+                    {
+                        "targets": [ 0 ],
+                        "visible": false,
+                        "searchable": true
+                    }
+                ]
             });
         </script>';
     }
