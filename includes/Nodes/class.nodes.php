@@ -25,6 +25,25 @@ class FF_Nodes {
         }
     }
 
+    public static function getTotalClients() {
+        $clients = 0;
+        foreach (FF_Nodes::getNodes() as $node)
+            $clients += $node->getClientCount();
+        return $clients;
+    }
+
+    public static function getTotalNodeCount() {
+        return count(FF_Nodes::getNodes());
+    }
+
+    public static function getOnlineNodeCount() {
+        $nodes = 0;
+        foreach (FF_Nodes::getNodes() as $node)
+            if ($node->isOnline())
+                $nodes++;
+        return $nodes;
+    }
+
 }
 
 FF_Nodes::getNodes();
