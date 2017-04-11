@@ -31,7 +31,7 @@ class FF_SC_Stats {
             echo '<tr>';
             echo '<td><b>' . $node->getHostname() . '</b></td>';
             echo '<td data-order="' . $node->getClientCount() . '">' . $node->getClientCount() . ' Clients</td>';
-            echo '<td data-order="' . $node->isOnline() . '">' . ($node->isOnline() ? 'Online!' : 'Offline!') . '</td>';
+            echo '<td data-order="' . $node->isOnline() . '">' . ($node->isOnline() ? '<label class="label label-success">Online!</label>' : '<label class="label label-danger">Offline!</label>') . '</td>';
             echo '</tr>';
         }
         echo '</tbody>';
