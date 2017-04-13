@@ -30,7 +30,7 @@ class FF_SC_Stats {
         echo '<tbody>';
         foreach ($nodes as $node) {
             echo '<tr>';
-            echo '<td>' . $node->getID() . '</td>';
+            echo '<td><a href="https://freifunk-muenden.de/meshviewer/#!v:m;n:' . $node->getID() . '">' . $node->getID() . '</a></td>';
             echo '<td><b>' . $node->getHostname() . '</b></td>';
             echo '<td data-order="' . $node->getClientCount() . '">' . $node->getClientCount() . ' Clients</td>';
             echo '<td data-order="' . $node->isOnline() . '">' . ($node->isOnline() ? '<label class="label label-success">Online!</label>' : '<label class="label label-danger">Offline!</label>') . '</td>';
