@@ -10,10 +10,21 @@ class FF_SC_Stats {
         FF_SC_Stats::printGlobalGraph();
         echo '<hr/>';
         FF_SC_Stats::printNodeList();
+        echo '<hr/>';
+        FF_SC_Stats::printTraffic();
     }
 
     private static function printGlobalGraph() {
         echo '<img src="/ffapi/data/nodes/globalGraph.png?' . time() . '" alt="Anzahl der Nodes und Clients der letzten 7 Tage" />';
+    }
+
+    private static function printTraffic() {
+        echo '<h3>Traffic</h3>';
+        echo '<div style="text-align: center;">';
+        echo '<img src="/wp-content/stats/daily.png?' . time() . '" alt="" />';
+        echo '<img src="/wp-content/stats/hourly.png?' . time() . '" alt="" />';
+        echo '<img src="/wp-content/stats/monthly.png?' . time() . '" alt="" />';
+        echo '</div>';
     }
 
     private static function printNodeList() {
